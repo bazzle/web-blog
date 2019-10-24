@@ -1,0 +1,70 @@
+.intro{
+	@include align-left;
+	position:relative;
+	padding-top:$text-padding-std*2;
+	padding-bottom:$text-padding-std*2;
+	@include bp($bp1){
+		padding-top:$text-padding-std*4;
+		padding-bottom:$text-padding-std*4;
+		box-sizing:content-box;
+		height:auto;
+		//padding-bottom:0;
+	}
+	&__title{
+		display:block;
+		text-align:center;
+		@include text-leadin-large;
+		font-weight:$bold;
+		margin-bottom:$text-padding-std;
+		@include bp($bp2){
+			font-weight:$bold;
+		}
+	}
+	&__inner{
+		width:100%;
+		margin:0 auto;
+		@include bp($bp2){
+			width:70%;
+		}
+	}
+	&__statement{
+		padding-bottom:$text-padding-std;
+	  p{
+	  	@include text-leadin-hero;
+	  	text-align:center;
+	    margin-bottom:$text-padding-std;
+	    &:last-of-type{
+	    	margin-bottom:0;
+	    }
+	  }
+	}
+	&__down-icon {
+		@include align-center;
+		&__icon{
+			color:$color-feint;
+			width: 30px;
+			height: 30px;
+		}
+	}
+	&__links{
+		width:100%;
+		padding-bottom:$text-padding-std;
+	  text-align:center;
+	  display:flex;
+	  justify-content: center;
+	  align-items:center;
+	  flex-direction:row;
+	  font-size:2.3rem;
+	  font-weight:$std;
+	  a{
+	    @include text-underline($color-brand);
+	    padding:.2em;
+	  }
+	  @include bp($bp2){
+	    font-size:2.3rem;
+	  }
+	}
+	&__statement-cta{
+		@include text-underline($color-brand);
+	}
+}

@@ -1,0 +1,9 @@
+.footer{
+	&__content{
+    @include col-std(75%);
+		p{
+      @include text-tiny;
+      margin-bottom:1em;
+    }
+	}
+}

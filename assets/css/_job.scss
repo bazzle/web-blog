@@ -1,0 +1,142 @@
+.jobs{
+  @include bp-minus($bp1){
+    display:flex;
+    flex-direction:column-reverse;
+  }
+}
+.job{
+  @include bp-minus($bp2){
+    padding:$text-padding-std 0;
+    &:nth-of-type(even){
+      background-color:#f7f7f7;
+    }
+  }
+  @include bp($bp2){
+    padding:0;
+    visibility: hidden;
+    overflow:visible;
+    opacity:0;
+    width:0;
+    height:0;
+    transition: opacity .8s .8s;
+    position:relative;
+  }
+  &__arrows{
+    position:absolute;
+    cursor:pointer;
+    width:20px;
+    height:20px;
+    svg{
+      width:100%;
+      height:100%;
+    }
+    &--prev{
+      top:200px;
+      left:-20px;
+    }
+    &--next{
+      top:200px;
+      right:-20px;
+    }
+  }
+  &__logo{
+    margin-bottom:$text-padding-std;
+    @include bp($bp2){
+      margin-bottom:0;
+    }
+    img{
+      width:auto;
+      max-width:220px;
+      height:auto;
+    }
+  }
+  &.job-show{
+    width:100%;
+    visibility: visible;
+    opacity:1;
+    width:100%;
+    height:auto;
+  }
+  &.job-last{
+    .job__arrows--next{
+      display:none;
+    }
+  }
+  &.job-first{
+    .job__arrows--prev{
+      display:none;
+    }
+  }
+  &__details{
+    display:block;
+    margin-bottom:$text-padding-std;
+    p{
+      padding-bottom:0;
+      margin-bottom:0;
+    }
+    @include bp($bp2){
+      display:none;
+    }
+    &__company{
+      @include text-leadin;
+    }
+  }
+  &__profile{
+    position:relative;
+    width:100%;
+    @include bp($bp2){
+      width:25%;
+      padding-right:$grid-space;
+    }
+  }
+  &__main-body{
+    padding-right:0;
+    width:100%;
+    margin-bottom:$text-padding-std;
+    @include bp($bp2){
+      margin-bottom:0;
+      width:calc(50% - #{$grid-space});
+      padding-right:5%;
+    }
+  }
+  &__about{
+    @include text-body;
+  }
+  &__intro{
+    @include text-leadin-large--tight;
+  }
+  &__resp{
+    width:100%;
+    @include bp($bp2){
+      width:25%;
+      margin-left:$grid-space;
+    }
+  }
+  &__resp-chart{
+    display:flex;
+    justify-content:flex-start;
+    margin-bottom:$text-padding-std;
+    .chart{
+      max-width:170px;
+      max-height:170px;
+    }
+  }
+  &__tasks{
+    ul{
+      @include text-body;
+      color:$color-brand;
+      list-style-type:square;
+      padding-bottom:1em;
+      li{
+        padding-bottom:.5em;
+      }
+      span{
+        color:$black;
+      }
+    }
+  }
+  &__tasks-title{
+    @include text-title;
+    margin-bottom:$text-padding-std;
+  }
+}

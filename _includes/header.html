@@ -1,0 +1,23 @@
+<div class="panel panel-header">
+	<div class="cp header-main">
+		<div class="row">
+			<div class="header-main__inner">
+				{% if page.layout == 'home' %}
+				<div class="header-main__title">
+					<a href="{{site.url}}/">Barry Richards</a> <span>&nbsp;/&nbsp; Web Designer</span>
+				</div>
+				{% else %}
+				<h2 class="header-main__title">
+					<a href="{{site.url}}/">Barry Richards</a> <span>&nbsp;/&nbsp; Web Designer</span>
+				</h2>
+				{% endif %}
+				<button class="header-main__menu-button js-menu-button" aria-pressed="false" aria-expanded="false">
+					Menu
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% include menu.html %}

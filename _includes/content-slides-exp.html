@@ -8,13 +8,12 @@
 
 
 
-{% assign thisslider = page.whichslider %}
-{{ thisslider | jsonify }}
+{% assign thisslider = include.whichslider %}
 <div class="panel slides">
   <div class="panel__inner panel__inner--padding-shallow">
       <div class="slides__inner flickity flickity-slides">
         
-        {% for item in thisslider %}
+        {% for item in page[thisslider] %}
           <div class="slides__item">
             <img class="slides__item__image" src="{{ site.url }}/assets/images/content/{{ item[1].image }}" alt="{{ item[1].alt }}" />
             <div class="slides__item__caption">

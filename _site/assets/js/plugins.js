@@ -1,7 +1,4 @@
 var plugins = function() {
-
-  
-
   return{
     readmore: readmore,
     jobs: jobs,
@@ -10,5 +7,4 @@ var plugins = function() {
     menu: menu,
     flickity: flickity
   }
-
 }

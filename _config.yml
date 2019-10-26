@@ -1,8 +1,8 @@
 # Site settings
-title: Barry Richards Blog site
+title: Barry Richards Writings
 email: barry@br-web.io
 description: Web dev and UI design writing
-url: "https://br-web.io"
+url: "https://writings/br-web.io"
 # Build settings
 exclude: [assets/css, gruntfile.js, package.json, node_modules]
 keep_files: [assets/css]
@@ -10,3 +10,4 @@ include: ["_pages"]
 markdown: kramdown
 port: 4000
 livereload: false
+permalink: /:title:output_ext

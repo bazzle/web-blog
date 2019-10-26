@@ -216,8 +216,6 @@ var functions = function() {
         i.classList.add('loaded');
         var flkty = new Flickity(i, {
         // options
-        cellAlign: 'left',
-        contain: true,
         pageDots: false,
         });
       };

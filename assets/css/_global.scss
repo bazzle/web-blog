@@ -62,6 +62,9 @@ $text-padding-std:3rem;
 // line height
 $line-height:1.5;
 
+// grid space
+$grid-space:$text-padding-std;
+
 // underline
 @mixin text-underline($color){
     text-decoration: underline;
@@ -101,44 +104,27 @@ $line-height:1.5;
   font-size:1.5em;
 }
 
-@mixin text-leadin-hero{
-  font-weight:$std;
-  font-size:1.8rem;
-  line-height:1.4;
-  @include bp($bp2){
-    line-height: 1.4;
-    font-weight:$thin;
-    font-size:3rem;
-  }
-}
-
-@mixin text-leadin-large{
-  font-weight:400;
-  font-size:2.3rem;
-  line-height:1.2;
-  @include bp($bp2){
-    line-height: 1.4;
-    font-size:3rem;
-  }
-}
-
-@mixin text-leadin-large--tight{
-  font-weight:$bold;
-  font-size:2.3rem;
-  line-height:1.2;
-  @include bp($bp2){
-    line-height: 1.2;
-    font-weight:$thin;
-    font-size:3rem;
-  }
-}
-
 @mixin text-leadin{
-  font-weight:$bold;
-  font-size:1.2em;
-  line-height:1.2;
-  @include bp($bp2){
+  p{
+    font-weight:$std;
     font-size:2.3rem;
+    @include bp($bp2){
+      font-weight:$thin;
+      font-size:3rem;
+    }
+  }
+}
+
+@mixin text-leadin--tight{
+  p{
+    font-weight:$std;
+    font-size:2.3rem;
+    //line-height:1.2;
+    @include bp($bp2){
+      font-weight:$thin;
+      font-size:3rem;
+      line-height:1.2;
+    }
   }
 }
 
@@ -151,14 +137,32 @@ $line-height:1.5;
   }
 }
 
+@mixin text-title-item{
+  font-weight:$std;
+  line-height:1.1;
+  font-size:2.2em;
+  @include bp($bp2){
+    font-size:4rem;
+  }
+}
+
+@mixin text-title-pagehead{
+  font-weight:$std;
+  line-height:1.1;
+  font-size:2.8em;
+  @include bp($bp2){
+    font-size:6rem;
+  }
+}
+
 @mixin text-tiny{
     font-size:.8em;
 }
 
 // text body
 @mixin text-body{
-  font-size:1.2em;
-  font-weight:$std;
+  font-size:2.2rem;
+  font-weight:$thin;
   strong{
     font-weight:$bold;
   }
@@ -460,6 +464,11 @@ h1, h2, h3, h4, h5{
       transform:rotate(270deg);
     }
   }
+  &--outline{
+    background-color:transparent;
+    border:1px solid $color-brand;
+    color:$black;
+  }
 }
 
 .link-styled{
@@ -495,3 +504,13 @@ h1, h2, h3, h4, h5{
   white-space: nowrap;
 }
 
+// padding resets
+.nopadding{
+  padding:0!important;
+}
+.nopadding-bottom{
+  padding-bottom:0!important;
+}
+.nopadding-top{
+  padding-top:0!important;
+}

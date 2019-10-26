@@ -5,26 +5,58 @@
   {% include head.html %}
 </head>
 
-  <body>
+<body>
 
-    <header class="header">
-        {% include header.html %}
-    </header>
-    
-    <main role="main">
-      <article>
-        <header class="article__header">
-          {{ page.title }}
-        </header>
-        {{ content }}
-      </article>
-    </main>
+  <header class="header">
+    {% include header.html %}
+  </header>
 
-    <footer role="contentinfo">
-        {% include footer.html %}
-    </footer>
+  <main role="main">
+    <article class="article">
 
-  {% include scripts.html %}
-  
-  </body>
+      <header class="article__header panel">
+          <div class="panel__inner panel__inner--padding-shallow">
+            <div class="row row--nocols">
+              <div class="article__header__inner">
+                <h2 class="article__header__title">{{ page.title }}</h2>
+                <p class="article__header__meta"><span>{{ page.date | date: "%a, %b %d, %y" }}</span> in <span>{{ page.categories }}</span></p>
+                <div class="article__header__excerpt">
+                  {{ page.excerpt }}
+                </div>
+              </div>
+            </div>
+          </div>
+      </header>
+
+
+      <div class="panel">
+        <div class="panel__inner panel__inner--padding-shallow">
+          <div class="row row--nocols">
+            <div class="article__content">
+              {{ content | remove_first:page.excerpt }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__inner panel__inner--padding-shallow nopadding-top">
+          <div class="row row--nocols">
+            <div class="article__footer">
+              <a class="button button--outline" href="{{ site.url }}">Back to index</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  </article>
+</main>
+
+<footer role="contentinfo">
+  {% include footer.html %}
+</footer>
+
+{% include scripts.html %}
+
+</body>
 </html>

@@ -4,10 +4,33 @@
     overflow-y:hidden;
     position:relative;
     &__inner{
-        padding:$text-padding-std*2 0;
-        width:100%;
+        width:90vw;
+        padding-left:5vw;
+        padding-right:5vw;
+        padding-top:$text-padding-std*2;
+        padding-bottom:$text-padding-std*2;
+        margin:0 auto;
+        width:100vw;
+        padding-left:5vw;
+        padding-right:5vw;
+        max-width:$site-width;
         @include bp($bp2){
-            padding:$text-padding-std*5 0;
+            padding-top:$text-padding-std*4;
+            padding-bottom:$text-padding-std*4;
+        }
+        &--nopadding{
+            padding-top:0;
+            padding-bottom:0;
+        }
+        &--padding-shallow{
+            @include bp($bp2){
+                padding-top:$text-padding-std*3;
+                padding-bottom:$text-padding-std*3;
+            }
+        }
+        &--padding-std{
+            padding-top:$text-padding-std;
+            padding-bottom:$text-padding-std;
         }
     }
 
@@ -43,76 +66,15 @@
             }
         }
     }
-
-
     &-header{
         background-color:$white;
-        padding-top:0;
-        padding-bottom:0;
-        //border-bottom:1px solid $black;
-    }
-    &-intro{
-        color:$black;
-        position:relative;
-        padding-top:0;
-        padding-bottom:0;
-        height:auto;
-        background-color:$white-darken;
-        @include align-center;
-        height:calc(100vh - #{$header-height});
-        max-height:800px;
-    }
-    &-snippet{
-        color:$black;
-    }
-    &-snippet--contact{
-        background-color:$white-darken;
     }
     &-about{
         background-color:$white;
     }
-    &-progress{
-        color:$black;
-        background-color:$white;
-        .panel__title{
-            //color:$white;
-        }
-    }
-    &-grid{
-        padding-top:0;
-        padding-bottom:0;
-        background-color:$white;
-    }
-    &-main{
-    }
-    &-work-item-head{
-        //background-color:$white-darken;
-    }
-    &-work-item-banner{
-        padding:0;
-    }
-    &-work-item-main{
-        padding-bottom:$text-padding-std*5;
-    }
-    &-work-item-pagination{
-        color:$black;
-        background-color:$gray;
-        &--bg-white{
-            background-color:$white;
-        }
-        .panel__inner{
-            @include bp($bp2){
-                padding-top:$text-padding-std*5;
-                padding-bottom:$text-padding-std*5;
-            }
-        }
-    }
     &-footer{
-        //border-top:$border-feint;
-        padding-top:$text-padding-std*2;
-        padding-bottom:$text-padding-std*2;
-        background-color:$black;
-        color:$white;
+        background-color:$gray;
+        color:$black;
     }
     &--white-darken{
         background-color:$white-darken;

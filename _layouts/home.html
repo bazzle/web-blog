@@ -9,22 +9,27 @@
     <header class="header">
         {% include header.html %}
     </header>
-
     
     <main role="main">
-		  
-      <!--{{ site | jsonify }}-->
       
-      <ul>
-        {% for post in site.posts %}
-          <li>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt }}</p>
-          </li>
-        {% endfor %}
-      </ul>
-
-
+      <div class="post-index panel">
+        <div class="panel__inner nopadding-top">
+          <div class="row row--nocols">
+            {% for post in site.posts %}
+            <div class="post-index__item">
+              <div class="post-index__item__inner">
+                <h2 class="post-index__item__title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <p class="post-index__item__meta"><span>{{ post.date | date: "%a, %b %d, %y" }}</span> in <span>{{ post.categories }}</span></p>
+                <div class="post-index__item__excerpt">
+                  {{ post.excerpt }}
+                </div>
+                <a class="button button--outline" href="{{ post.url }}">Read more</a>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
       {% include home_about.html %}
     </main>
 

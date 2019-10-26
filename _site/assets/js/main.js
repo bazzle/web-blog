@@ -9,7 +9,7 @@ if ( $('body').attr('id') == 'homepage' ){
     allfunctions.homegrid();
   };
 }
-if ( $('body').hasClass('flickity')){
+if ( document.querySelector('.flickity') ){
   window.onload = function() {
     allfunctions.flickity();
   };

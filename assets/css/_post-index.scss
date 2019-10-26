@@ -1,0 +1,27 @@
+.post-index{
+  min-height:70vh;
+  &__item{
+    &__inner{
+      @include col-std(75%);
+      padding-bottom:$text-padding-std*2;
+    }
+    &__title{
+      @include text-title-item;
+      margin-bottom:$text-padding-std;
+    }
+    &__meta{
+      margin-bottom:$text-padding-std;
+      span{
+        color:$color-brand;
+        font-weight:$bold;
+      }
+    }
+    &__excerpt{
+      @include text-body;
+      margin-bottom:$text-padding-std;
+    }
+    &:first-of-type{
+      padding-top:$text-padding-std*2;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.article{
+  &__header{
+    background-color:$gray;
+    &__inner{
+      @include col-std(75%);
+    }
+    &__title{
+      @include text-title-pagehead;
+      padding-bottom:$text-padding-std;
+    }
+    &__meta{
+      padding-bottom:$text-padding-std;
+      span{
+        color:$color-brand;
+        font-weight:$bold;
+      }
+      @include bp($bp2){
+        padding-bottom:$text-padding-std*2;
+      }
+        
+    }
+    &__excerpt{
+      @include text-leadin;
+    }
+  }
+  &__content{
+    @include text-body;
+    *:first-of-type{
+      padding-top:0;
+    }
+    &__image{
+      padding:$text-padding-std*2 0;
+      img{
+        width:100%;
+        height:auto;
+        box-shadow:$shadow;
+      }
+    }
+    p, ul, ol{
+      @include col-std(75%);
+    }
+  }
+  &__footer{
+    @include col-std(75%);
+    &__backlink{
+      a{
+        @include text-underline($color-brand);
+        padding:.2em;
+        font-size:2.3rem;
+      }
+    }
+  }
+}

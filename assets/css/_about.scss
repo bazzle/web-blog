@@ -7,20 +7,13 @@
 			padding-right:5%;
 		}
 	}
-	&__snippet{
-		padding-bottom:1.5em;
-		p{
-			@include text-leadin-large--tight;
-		}
-	}
-	&__statement{
-		@include text-body;
-	}
 	&__leadin{
-		@include text-leadin;
+		@include text-leadin--tight;
+		padding-bottom:$text-padding-std;
 	}
-	&__question{
-		font-weight:$bold;
+	&__content{
+		@include text-body;
+		padding-bottom:$text-padding-std;
 	}
 	&__profile{
 		width:100%;
@@ -98,7 +91,7 @@
 		}
 	}
 	&__quote{
-		@include text-leadin-large--tight;
+		@include text-leadin;
 		position:relative;
 		width:100%;
 		opacity:0;

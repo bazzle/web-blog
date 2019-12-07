@@ -712,15 +712,15 @@ body {
 .panel__inside-title {
   padding-bottom: 6rem;
   font-weight: 500;
-  font-weight: 500;
-  font-size: 1.2em;
-  line-height: 1.2;
+  font-weight: 400;
+  font-size: 2.3rem;
   width: 100%;
   width: 100%;
 }
 @media only screen and (min-width: 1000px) {
   .panel__inside-title {
-    font-size: 2rem;
+    font-weight: 400;
+    font-size: 3rem;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -833,11 +833,15 @@ body {
   font-weight: 500;
 }
 .about__content h1, .about__content h2, .about__content h3, .about__content h4, .about__content h5 {
-  font-size: font-size-std;
-  padding: 0;
-  margin: 0;
+  font-weight: 400;
+  font-size: 2.3rem;
   margin-bottom: 3rem;
-  font-weight: 500;
+}
+@media only screen and (min-width: 1000px) {
+  .about__content h1, .about__content h2, .about__content h3, .about__content h4, .about__content h5 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
 }
 .about__content p, .about__content ol, .about__content ul {
   padding: 0;
@@ -951,11 +955,15 @@ body {
   font-weight: 500;
 }
 .about__abilities ul h1, .about__abilities ul h2, .about__abilities ul h3, .about__abilities ul h4, .about__abilities ul h5 {
-  font-size: font-size-std;
-  padding: 0;
-  margin: 0;
+  font-weight: 400;
+  font-size: 2.3rem;
   margin-bottom: 3rem;
-  font-weight: 500;
+}
+@media only screen and (min-width: 1000px) {
+  .about__abilities ul h1, .about__abilities ul h2, .about__abilities ul h3, .about__abilities ul h4, .about__abilities ul h5 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
 }
 .about__abilities ul p, .about__abilities ul ol, .about__abilities ul ul {
   padding: 0;
@@ -987,14 +995,14 @@ body {
   padding-bottom: 0;
 }
 .about__abilities-title {
-  font-weight: 500;
-  font-size: 1.2em;
-  line-height: 1.2;
+  font-weight: 400;
+  font-size: 2.3rem;
   margin-bottom: 3rem;
 }
 @media only screen and (min-width: 1000px) {
   .about__abilities-title {
-    font-size: 2rem;
+    font-weight: 400;
+    font-size: 3rem;
   }
 }
 .about__more {
@@ -1328,11 +1336,15 @@ https://flickity.metafizzy.co
   font-weight: 500;
 }
 .slides__item__caption h1, .slides__item__caption h2, .slides__item__caption h3, .slides__item__caption h4, .slides__item__caption h5 {
-  font-size: font-size-std;
-  padding: 0;
-  margin: 0;
+  font-weight: 400;
+  font-size: 2.3rem;
   margin-bottom: 3rem;
-  font-weight: 500;
+}
+@media only screen and (min-width: 1000px) {
+  .slides__item__caption h1, .slides__item__caption h2, .slides__item__caption h3, .slides__item__caption h4, .slides__item__caption h5 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
 }
 .slides__item__caption p, .slides__item__caption ol, .slides__item__caption ul {
   padding: 0;
@@ -1414,11 +1426,15 @@ https://flickity.metafizzy.co
   font-weight: 500;
 }
 .post-index__item__excerpt h1, .post-index__item__excerpt h2, .post-index__item__excerpt h3, .post-index__item__excerpt h4, .post-index__item__excerpt h5 {
-  font-size: font-size-std;
-  padding: 0;
-  margin: 0;
+  font-weight: 400;
+  font-size: 2.3rem;
   margin-bottom: 3rem;
-  font-weight: 500;
+}
+@media only screen and (min-width: 1000px) {
+  .post-index__item__excerpt h1, .post-index__item__excerpt h2, .post-index__item__excerpt h3, .post-index__item__excerpt h4, .post-index__item__excerpt h5 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
 }
 .post-index__item__excerpt p, .post-index__item__excerpt ol, .post-index__item__excerpt ul {
   padding: 0;
@@ -1506,11 +1522,15 @@ https://flickity.metafizzy.co
   font-weight: 500;
 }
 .article__content h1, .article__content h2, .article__content h3, .article__content h4, .article__content h5 {
-  font-size: font-size-std;
-  padding: 0;
-  margin: 0;
+  font-weight: 400;
+  font-size: 2.3rem;
   margin-bottom: 3rem;
-  font-weight: 500;
+}
+@media only screen and (min-width: 1000px) {
+  .article__content h1, .article__content h2, .article__content h3, .article__content h4, .article__content h5 {
+    font-weight: 400;
+    font-size: 3rem;
+  }
 }
 .article__content p, .article__content ol, .article__content ul {
   padding: 0;
@@ -1552,11 +1572,11 @@ https://flickity.metafizzy.co
   height: auto;
   box-shadow: 0px 5px 10px rgba(93, 93, 93, 0.3);
 }
-.article__content p, .article__content ul, .article__content ol {
+.article__content p, .article__content ul, .article__content ol, .article__content h1, .article__content h2, .article__content h3, .article__content h4, .article__content h5 {
   width: 100%;
 }
 @media only screen and (min-width: 1000px) {
-  .article__content p, .article__content ul, .article__content ol {
+  .article__content p, .article__content ul, .article__content ol, .article__content h1, .article__content h2, .article__content h3, .article__content h4, .article__content h5 {
     width: 75%;
     margin-left: 25%;
   }

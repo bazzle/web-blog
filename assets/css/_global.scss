@@ -3,8 +3,8 @@
 // paths
 $path-images: "../assets/images";
 
-// site width: 
-$site-width:1500px;
+// site width:
+$site-width: 1500px;
 
 // media queries
 $bp1: 750px;
@@ -12,10 +12,10 @@ $bp2: 1000px;
 $bp3: $site-width;
 
 // breakpoint mixins
-@mixin bp($breakpoint){
-  @media only screen and (min-width:$breakpoint) {
-      @content;
-  }
+@mixin bp($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
 }
 
 @mixin bp-minus($breakpoint) {
@@ -24,18 +24,17 @@ $bp3: $site-width;
     }
 }
 
-
 // colors
-$color-brand:#eb3f3f;
-$color-accent:#ffd700;
-$color-dark-gray:#4B4B4B;
-$color-feint:#9b9b9b;
-$black:#262626;
+$color-brand: #eb3f3f;
+$color-accent: #ffd700;
+$color-dark-gray: #4B4B4B;
+$color-feint: #9b9b9b;
+$black: #262626;
 $white: #ffffff;
 $gray: #f2f2f2;
-$white-darken:darken($white, 5);
-$black-lighten:lighten($black, 20);
-$color-text:#444444;
+$white-darken: darken($white, 5);
+$black-lighten: lighten($black, 20);
+$color-text: #444444;
 
 // font loading
 /*
@@ -44,174 +43,186 @@ font-family: 'Rubik', sans-serif;
 */
 
 // fonts
-$font-brand:'Rubik', sans-serif;
-$font-std:'Rubik', sans-serif;
+$font-brand: "Rubik", sans-serif;
+$font-std: "Rubik", sans-serif;
 
 // font-size;
-$font-size-base:62.5%;
-$font-size-std:1.5rem;
+$font-size-base: 62.5%;
+$font-size-std: 1.5rem;
 
 // font weights
-$thin:300;
-$std:400;
-$bold:500;
+$thin: 300;
+$std: 400;
+$bold: 500;
 
 // font margins
-$text-padding-std:3rem;
+$text-padding-std: 3rem;
 
 // line height
-$line-height:1.5;
+$line-height: 1.5;
 
 // grid space
-$grid-space:$text-padding-std;
+$grid-space: $text-padding-std;
 
 // underline
-@mixin text-underline($color){
+@mixin text-underline($color) {
     text-decoration: underline;
     text-decoration-skip-ink: auto;
     text-decoration-color: $color;
 }
 
-@mixin text-intro{
-  font-weight:$thin;
-  font-size:2em;
-  line-height:2;
-  p{
-    line-height: 1.4;
+@mixin text-intro {
+    font-weight: $thin;
+    font-size: 2em;
+    line-height: 2;
+
+    p {
+        line-height: 1.4;
+    }
+}
+
+@mixin text-page-title {
+    font-size: 2.3rem;
+    font-weight: $bold;
+    line-height: 1.2;
+}
+
+@mixin text-snippet {
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+@mixin text-leadin {
+    p {
+        font-weight: $std;
+        font-size: 2.3rem;
+
+        @include bp($bp2) {
+            font-weight: $thin;
+            font-size: 3rem;
+        }
+    }
+}
+
+@mixin text-leadin--tight {
+    p {
+        font-weight: $std;
+        font-size: 2.3rem;
+
+        //line-height:1.2;
+        @include bp($bp2) {
+            font-weight: $thin;
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+    }
+}
+
+@mixin text-title {
+  font-weight: $std;
+  font-size: 2.3rem;
+
+  @include bp($bp2) {
+      font-weight: $std;
+      font-size: 3rem;
   }
 }
 
-@mixin text-page-title{
-  font-size:2.3rem;
-  font-weight:$bold;
-  line-height:1.2;
+@mixin text-title-item {
+    font-weight: $std;
+    line-height: 1.1;
+    font-size: 2.2em;
+
+    @include bp($bp2) {
+        font-size: 4rem;
+    }
+}
+
+@mixin text-title-pagehead {
+    font-weight: $std;
+    line-height: 1.1;
+    font-size: 2.8em;
+
+    @include bp($bp2) {
+        font-size: 6rem;
+    }
+}
+
+@mixin text-tiny {
+    font-size: .8em;
 }
 
 // styled links
-@mixin link-styled{
-  font-size:2.3rem;
-  font-weight:$std;
-  a{
-    @include text-underline($color-brand);
-  }
-  @include bp($bp2){
-    font-size:2.3rem;
-  }
-}
+@mixin link-styled {
+    font-size: 2.3rem;
+    font-weight: $std;
 
-@mixin text-snippet{
-  font-weight:300;
-  font-size:1.5em;
-}
-
-@mixin text-leadin{
-  p{
-    font-weight:$std;
-    font-size:2.3rem;
-    @include bp($bp2){
-      font-weight:$thin;
-      font-size:3rem;
+    a {
+        @include text-underline($color-brand);
     }
-  }
-}
 
-@mixin text-leadin--tight{
-  p{
-    font-weight:$std;
-    font-size:2.3rem;
-    //line-height:1.2;
-    @include bp($bp2){
-      font-weight:$thin;
-      font-size:3rem;
-      line-height:1.2;
+    @include bp($bp2) {
+        font-size: 2.3rem;
     }
-  }
-}
-
-@mixin text-title{
-  font-weight:$bold;
-  font-size:1.2em;
-  line-height:1.2;
-  @include bp($bp2){
-    font-size:2rem;
-  }
-}
-
-@mixin text-title-item{
-  font-weight:$std;
-  line-height:1.1;
-  font-size:2.2em;
-  @include bp($bp2){
-    font-size:4rem;
-  }
-}
-
-@mixin text-title-pagehead{
-  font-weight:$std;
-  line-height:1.1;
-  font-size:2.8em;
-  @include bp($bp2){
-    font-size:6rem;
-  }
-}
-
-@mixin text-tiny{
-    font-size:.8em;
 }
 
 // text body
-@mixin text-body{
-  font-size:2.2rem;
-  font-weight:$thin;
-  strong{
-    font-weight:$bold;
-  }
-  h1, h2, h3, h4, h5{
-    font-size:font-size-std;
-    padding:0;
-    margin:0;
-    margin-bottom:$text-padding-std;
-    font-weight:$bold;
-  }
-  p, ol, ul{
-    padding:0;
-    margin:0;
-    margin-bottom:$text-padding-std;
-  }
-  ul{
-    box-sizing:border-box;
-  }
-  li{
-    list-style:none;
-    position:relative;
-    display:flex;
-    align-items:baseline;
-    &:before{
-      margin-right:.5em;
-      content:'';
-      display:block;
-      width:5px;
-      height:5px;
-      background-color:$color-brand;
-      flex-shrink:0;
-      position:relative;
-      top:-3px;
+@mixin text-body {
+    font-size: 2.2rem;
+    font-weight: $thin;
+
+    strong {
+        font-weight: $bold;
     }
-  }
-  & > *:last-child{
-    margin-bottom:0;
-    padding-bottom:0;
-  }
+
+    h1, h2, h3, h4, h5 {
+        @include text-title;
+        margin-bottom:$text-padding-std;
+    }
+
+    p, ol, ul {
+        padding: 0;
+        margin: 0;
+        margin-bottom: $text-padding-std;
+    }
+
+    ul {
+        box-sizing: border-box;
+    }
+
+    li {
+        list-style: none;
+        position: relative;
+        display: flex;
+        align-items: baseline;
+
+        &:before {
+            margin-right: .5em;
+            content: '';
+            display: block;
+            width: 5px;
+            height: 5px;
+            background-color: $color-brand;
+            flex-shrink: 0;
+            position: relative;
+            top: -3px;
+        }
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
 }
 
 // link color
-$link-color:$black;
+$link-color: $black;
 
 // text shadow
 $text-shadow-std: 1px 1px 2px $black;
 
 // raised item shadow
-$shadow:0px 5px 10px rgba(93, 93, 93, 0.3);
+$shadow: 0px 5px 10px rgba(93, 93, 93, 0.3);
 
 // lines
 $line-solid: 1px;
@@ -222,22 +233,22 @@ $line-thick: 2px;
 $border-feint: rgba($black, 0.2) solid 1px;
 $border-brand-feint: rgba($color-brand, 0.2) solid 1px;
 
-
 ///////// LAYOUT AND GRID ////////////////////////////////////////////////////////////////////////
 
-@mixin col-std($width){
-  width:100%;
-  @include bp($bp2){
-    width:$width;
-    margin-left:25%;
-  }
+@mixin col-std($width) {
+    width: 100%;
+
+    @include bp($bp2) {
+        width: $width;
+        margin-left: 25%;
+    }
 }
 
 // header
-$header-height:80px;
+$header-height: 80px;
 
 // margin on mobile
-$textmarginmobile:4rem;
+$textmarginmobile: 4rem;
 
 // Aspect ratios
 $aspect_1-1: 100%;
@@ -247,103 +258,110 @@ $aspect_3-2: 66.66%;
 $aspect_8-5: 62.5%;
 
 // Spacing
-$padding-std:2.5rem;
+$padding-std: 2.5rem;
 
 // global anim
-@mixin darkenbgonhover($color){
-  @keyframes darkenbg{
-    from{
-      background-color:$color;
+@mixin darkenbgonhover($color) {
+    @keyframes darkenbg {
+        from {
+            background-color: $color;
+        }
+
+        to {
+            background-color: darken($color, 5%);
+        }
     }
-    to{
-      background-color:darken($color, 5%);
+
+    @keyframes darkenbgrev {
+        from {
+            background-color: darken($color, 5%);
+        }
+
+        to {
+            background-color: $color;
+        }
     }
-  }
-  @keyframes darkenbgrev{
-    from{
-      background-color:darken($color, 5%);
-    }
-    to{
-      background-color:$color;
-    }
-  }
 }
 
 // mobile text margin
-@mixin mobile-text-margin{
-  max-width:90vw;
-  padding-left:5vw;
-  padding-right:5vw;
+@mixin mobile-text-margin {
+    max-width: 90vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 
 // Turn button into inline link
-@mixin button-inline{
-  border-radius: 0;
-  border:none;
-  display:inline;
-  padding:0;
-  font-family:inherit;
-  cursor:pointer;
-  color:$link-color;
+@mixin button-inline {
+    border-radius: 0;
+    border: none;
+    display: inline;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
+    color: $link-color;
 }
 
 // Align
-@mixin align-left{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-}
-@mixin align-left-top{
-    display:flex;
-    align-items:flex-start;
-    justify-content:flex-start;
-}
-@mixin align-left-bottom{
-    display:flex;
-    align-items:flex-end;
-    justify-content:flex-start;
+@mixin align-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-@mixin align-center{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-@mixin align-center-top{
-    display:flex;
-    align-items:flex-start;
-    justify-content:center;
-}
-@mixin align-center-bottom{
-    display:flex;
-    align-items:flex-end;
-    justify-content:center;
+@mixin align-left-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-@mixin align-right{
-    display:flex;
-    align-items:center;
-    justify-content:flex-end;
-}
-@mixin align-right-top{
-    display:flex;
-    align-items:flex-start;
-    justify-conten:flex-start;
-}
-@mixin align-right-bottom{
-    display:flex;
-    align-items:flex-start;
-    justify-conten:flex-end;
+@mixin align-left-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
 }
 
+@mixin align-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin align-center-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+@mixin align-center-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+@mixin align-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+@mixin align-right-top {
+    display: flex;
+    align-items: flex-start;
+    justify-conten: flex-start;
+}
+
+@mixin align-right-bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-conten: flex-end;
+}
 
 ///////// RESET ////////////////////////////////////////////////////////////////////////
 
-
-html, body{
-  padding:0;
-  margin:0;
-  overflow-x:hidden;
+html, body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 // To make every element border-box, and remove margin/padding
@@ -351,166 +369,177 @@ html, body{
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-svg{
-  fill:currentColor;
+svg {
+    fill: currentColor;
 }
 
-button{
-  border:0;
-  padding:0;
-  margin:0;
-  background-color:inherit;
+button {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: inherit;
 }
-
 
 ///////// CLASSES ////////////////////////////////////////////////////////////////////////
 
 // html
 html {
-  font-family: $font-brand;
-  font-size:$font-size-base;
-  color:$color-text;
+    font-family: $font-brand;
+    font-size: $font-size-base;
+    color: $color-text;
 }
 
 // body
 body {
-  font-size:$font-size-std;
-  line-height:$line-height;
+    font-size: $font-size-std;
+    line-height: $line-height;
 }
 
 // resets
-input, textarea, select, button{
-  font-size:inherit;
+input, textarea, select, button {
+    font-size: inherit;
 }
 
 // resets
-p, ul, ol{
-  padding:0;
-  margin:0;
-  line-height:$line-height;
-  list-style:none;
+p, ul, ol {
+    padding: 0;
+    margin: 0;
+    line-height: $line-height;
+    list-style: none;
 }
 
 // anchor
 
-%anchor{
-  text-decoration: none;
-  color:inherit;
-  transition: color .3s;
-  &:hover{
-    color:$color-brand;
-  }
+%anchor {
+    text-decoration: none;
+    color: inherit;
+    transition: color .3s;
+
+    &:hover {
+        color: $color-brand;
+    }
 }
 
-a{
-  @extend %anchor;
+a {
+    @extend %anchor;
 }
 
 // headings
-h1, h2, h3, h4, h5{
-  font-size:$font-size-std;
-  font-weight:$std;
-  margin:0;
-  padding:0;
-  line-height:1.4;
+h1, h2, h3, h4, h5 {
+    font-size: $font-size-std;
+    font-weight: $std;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
 }
 
 // button
 
-.button{
-  background-color:$color-brand;
-  border:0;
-  color:$white;
-  padding:.8em 1em;
-  border-radius:3px;
-  font-weight:$bold;
-  display:inline-block;
-  font-size:inherit;
-  line-height:1.4;
-  letter-spacing:.01em;
-  transition:background-color .2s;
-  cursor:pointer;
-  span{
-    padding-right:.5em;
+.button {
+    background-color: $color-brand;
+    border: 0;
+    color: $white;
+    padding: .8em 1em;
+    border-radius: 3px;
+    font-weight: $bold;
+    display: inline-block;
+    font-size: inherit;
+    line-height: 1.4;
+    letter-spacing: .01em;
+    transition: background-color .2s;
+    cursor: pointer;
+
+    span {
+        padding-right: .5em;
+
+        @include text-underline($color-brand);
+    }
+
+    &:hover, &:focus {
+        color: $white;
+        background-color: darken($color-brand, 10);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    &__icon {
+        display: block;
+        width: 15px;
+        height: 15px;
+
+        &--right {}
+
+        &--down {
+            transform: rotate(90deg);
+        }
+
+        &--left {
+            transform: rotate(180deg);
+        }
+
+        &--up {
+            transform: rotate(270deg);
+        }
+    }
+
+    &--outline {
+        background-color: transparent;
+        border: 1px solid $color-brand;
+        color: $black;
+    }
+}
+
+.link-styled {
+    font-weight: $bold;
+    display: inline-block;
+    font-size: inherit;
+    line-height: 1.4;
+    letter-spacing: .01em;
+    cursor: pointer;
+
     @include text-underline($color-brand);
-  }
-  &:hover, &:focus{
-    color:$white;
-    background-color:darken($color-brand,10);
-  }
-  &__inner{
-    display:flex;
-    align-items:center;
-    justify-content:flex-start;
-  }
-  &__icon{
-    display:block;
-    width:15px;
-    height:15px;
-    &--right{
-    }
-    &--down{
-      transform:rotate(90deg);
-    }
-    &--left{
-      transform:rotate(180deg);
-    }
-    &--up{
-      transform:rotate(270deg);
-    }
-  }
-  &--outline{
-    background-color:transparent;
-    border:1px solid $color-brand;
-    color:$black;
-  }
 }
-
-.link-styled{
-  font-weight:$bold;
-  display:inline-block;
-  font-size:inherit;
-  line-height:1.4;
-  letter-spacing:.01em;
-  cursor:pointer;
-  @include text-underline($color-brand);
-}
-
 
 // screen reader only
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 // Turn button into inline link
-.button-inline{
-  @include button-inline;
+.button-inline {
+    @include button-inline;
 }
 
 // text no break
-.nobreak{
-  white-space: nowrap;
+.nobreak {
+    white-space: nowrap;
 }
 
 // padding resets
-.nopadding{
-  padding:0!important;
+.nopadding {
+    padding: 0 !important;
 }
-.nopadding-bottom{
-  padding-bottom:0!important;
+
+.nopadding-bottom {
+    padding-bottom: 0 !important;
 }
-.nopadding-top{
-  padding-top:0!important;
+
+.nopadding-top {
+    padding-top: 0 !important;
 }

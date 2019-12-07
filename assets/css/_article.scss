@@ -36,7 +36,7 @@
         box-shadow:$shadow;
       }
     }
-    p, ul, ol{
+    p, ul, ol, h1, h2, h3, h4, h5{
       @include col-std(75%);
     }
   }
